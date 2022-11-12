@@ -27,7 +27,27 @@ namespace MockAssessement3
             Villagers.Add(slacker2);
             Slacker slacker3 = new Slacker();
             Villagers.Add(slacker3);
+            Harvest = CalcHarvest(Villagers);
+            Console.WriteLine("Exepecting 2 for Harvest");
 
+        }
+
+        public int CalcHarvest(List<Villager> listOfVillagers)
+        { 
+            int harvest = 0;
+            foreach (var v in listOfVillagers)
+            {
+
+                Console.WriteLine(v);
+                var amountFarmed = v.Farm();
+                harvest = harvest + amountFarmed;
+                Console.WriteLine(v);
+
+            }
+
+
+            return harvest;
+        
         }
 
         //public int CalcFoodConsumption()
