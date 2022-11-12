@@ -8,28 +8,38 @@ namespace MockAssessement3
 {
     public abstract class Villager
     {
-        public abstract string Name { get; set; }    
-        public int Hunger { get; set; }
-
-         abstract public int Farm();
-      
+        protected int VillagerHunger;
+        public abstract int Hunger{get;set;}
+       // public abstract int Farm { get; set; }
     }
 
     public class Farmer : Villager
     {
-         int Hunger = 1;
-        public override int Farm()
+        public override int Hunger
         {
-           return Hunger;
+            get
+            {
+                return VillagerHunger = 1;
+            }
+            set
+            {
+                VillagerHunger = value;
+            }
         }
     }
 
     public class Slacker : Villager
     {
-        public int Hunger = 3;
-        public override int Farm()
+        public override int Hunger
         {
-            return Hunger;
+            get
+            {
+                return VillagerHunger = 3;
+            }
+            set
+            {
+                VillagerHunger = value;
+            }
         }
     }
 

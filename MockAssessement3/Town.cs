@@ -8,21 +8,38 @@ namespace MockAssessement3
 {
     public class Town
     {
-        public Town(List<Villager> villagers)
+        public List<Villager> Villagers = new List<Villager>();
+        public int Harvest { get; set; }
+
+        public Town()
         {
-            Villagers = villagers;
+          AddVillagers();
+        }
+        public void AddVillagers()
+        {
+            // Instantiate farmer and add to the list of Villagers
+            Farmer farmer1 = new Farmer();
+            Villagers.Add(farmer1);
+            // Instatiate 3 slackers and add to the list of Villagers
+            Slacker slacker1 = new Slacker();
+            Villagers.Add(slacker1);
+            Slacker slacker2 = new Slacker();
+            Villagers.Add(slacker2);
+            Slacker slacker3 = new Slacker();
+            Villagers.Add(slacker3);
+
         }
 
-        public List<Villager> Villagers { get; set; }
-
-        //public void AddVillagers()
-        //{
-        //    var villager1 = new Villager;
-        //    var villager2 = new Villager;
-        //    var villager3 = new Villager;
-        //    var villager4 = new Villager;
-        //    villager4.Name=""
+        //public int CalcFoodConsumption()
+        //{ 
+        
         //}
+        //public bool SurviveTheWinter()
+        //{ 
+        
+        //}
+
+
 
     }
 
