@@ -20,7 +20,7 @@ namespace MockAssessement3
             // Instantiate farmer and add to the list of Villagers
             Farmer farmer1 = new Farmer();
             Villagers.Add(farmer1);
-            // Instatiate 3 slackers and add to the list of Villagers
+            //Instatiate 3 slackers and add to the list of Villagers
             Slacker slacker1 = new Slacker();
             Villagers.Add(slacker1);
             Slacker slacker2 = new Slacker();
@@ -32,11 +32,11 @@ namespace MockAssessement3
 
         //public int CalcFoodConsumption()
         //{ 
-        
+
         //}
         //public bool SurviveTheWinter()
         //{ 
-        
+
         //}
 
 

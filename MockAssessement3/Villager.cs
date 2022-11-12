@@ -1,47 +1,50 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Transactions;
 
 namespace MockAssessement3
 {
     public abstract class Villager
     {
-        protected int VillagerHunger;
-        public abstract int Hunger{get;set;}
-       // public abstract int Farm { get; set; }
+       // protected int VillagerHunger;
+        abstract public int Farm();
     }
 
     public class Farmer : Villager
     {
-        public override int Hunger
+        private int Hunger = 0; // set the zero for now 
+        private int farm = 2;
+        
+        //Constructor that sets hunger to 1
+        public Farmer()
+            {
+            this.Hunger = 1;
+            }
+
+        public override int Farm()
         {
-            get
-            {
-                return VillagerHunger = 1;
-            }
-            set
-            {
-                VillagerHunger = value;
-            }
+            return farm;
         }
     }
 
     public class Slacker : Villager
     {
-        public override int Hunger
+        private int Hunger = 0; // set the zero for now 
+        private int farm = 0;
+
+        //Constructor that sets hunger to 1
+        public Slacker()
         {
-            get
-            {
-                return VillagerHunger = 3;
-            }
-            set
-            {
-                VillagerHunger = value;
-            }
+            this.Hunger = 3;
+        }
+
+        public override int Farm()
+        {
+            return farm;
         }
     }
-
-
 }
