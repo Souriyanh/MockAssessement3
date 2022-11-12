@@ -16,7 +16,7 @@ namespace MockAssessement3
 
     public class Farmer : Villager
     {
-        private int Hunger = 0; // set the zero for now 
+        public int Hunger = 0; // set the zero for now 
         private int farm = 2;
         
         //Constructor that sets hunger to 1
@@ -33,7 +33,7 @@ namespace MockAssessement3
 
     public class Slacker : Villager
     {
-        private int Hunger = 0; // set the zero for now 
+        public int Hunger = 0; // set the zero for now 
         private int farm = 0;
 
         //Constructor that sets hunger to 1
