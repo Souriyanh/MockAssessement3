@@ -9,14 +9,14 @@ namespace MockAssessement3
     public class Town
     {
         public List<Villager> Villagers = new List<Villager>();
-        public int Harvest { get; set; }
+        public int VillageHarvest { get; set; }
         public int TotalFoodConsumption {get;set;}
         public List<int> LTtlFoodConsumed = new List<int>();
+        public bool SurviveWinter;
 
         public Town()
         {
           AddVillagers();
-          var ttl = CalcFoodConsumption();
           Console.WriteLine("Break");
         }
 
@@ -45,37 +45,44 @@ namespace MockAssessement3
             // add food consumed to list
             LTtlFoodConsumed.Add(slacker3.Hunger);
             Villagers.Add(slacker3);
-            Harvest = CalcHarvest(Villagers);
-            Console.WriteLine("Exepecting 2 for Harvest");
+            SurviveWinter = SurviveTheWinter();
+            Console.WriteLine("Break here");
 
         }
-
-        public int CalcHarvest(List<Villager> listOfVillagers)
+        // Renamed to "Harvest" for homework. 
+        public int Harvest(List<Villager> listOfVillagers)
         { 
             int harvest = 0;
             foreach (var v in listOfVillagers)
             {
-
                 Console.WriteLine(v);
                 var amountFarmed = v.Farm();
                 harvest = harvest + amountFarmed;
                 Console.WriteLine(v);
-
             }
-
-
-            return harvest;
-        
+            return harvest;        
         }
 
-        //public int CalcFoodConsumption()
-        //{ 
 
-        //}
-        //public bool SurviveTheWinter()
-        //{ 
+        public bool SurviveTheWinter()
+        {
+            bool survive;
+            // HW requirement Call and Store the result of the Harvest Method
+            VillageHarvest = Harvest(Villagers);
+            Console.WriteLine("Exepecting 2 for Harvest");
 
-        //}
+            // HW requirement Call and Store the result of the CalcFoodConsumption
+             TotalFoodConsumption = CalcFoodConsumption();
+            if (TotalFoodConsumption <= VillageHarvest)
+            {
+                survive = true;
+            }
+            else
+            {
+                survive = false;
+            }
+            return survive;
+        }
 
 
 
